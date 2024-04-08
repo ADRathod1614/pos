@@ -754,11 +754,13 @@ section {
 /*---------------------------------------
   FAQ ACCORDION               
 -----------------------------------------*/
+/* 
 .accordion-item {
   background-color: transparent;
   border-top: 0;
   border-right: 0;
   border-left: 0;
+  
 }
 
 .accordion-button {
@@ -791,7 +793,46 @@ button:focus:not(:focus-visible) {
 
 .accordion-body {
   padding: 2rem 0;
+} */
+
+/* Custom CSS */
+.accordion-button {
+  position: relative;
 }
+
+.accordion-button:focus {
+  box-shadow: none !important; /* Remove the focus box-shadow */
+}
+
+.accordion-button i {
+  transition: transform 0.3s; /* Add transition for arrow icon */
+}
+
+.accordion-button:hover i {
+  transform: rotate(90deg); /* Rotate arrow icon when hovered */
+}
+
+.accordion-button[aria-expanded="true"] i {
+  transform: rotate(180deg); /* Rotate arrow icon when accordion is expanded */
+}
+
+.accordion-button:hover {
+  background-color: #f8f9fa; /* Change background color on hover */
+  border-color: #dee2e6; /* Change border color on hover */
+}
+
+.accordion-button {
+  transition: background-color 0.3s, border-color 0.3s; /* Add transition effect */
+}
+
+.accordion-item:hover .accordion-body {
+  background-color: #f8f9fa; /* Change background color of accordion body on hover */
+}
+
+.accordion-item .accordion-body {
+  transition: background-color 0.3s; /* Add transition effect */
+}
+
 
 /*---------------------------------------
   TEAM MEMBERS               
@@ -881,7 +922,7 @@ button:focus:not(:focus-visible) {
 }
 
 /*---------------------------------------
-  PRODUCT               
+  FEATURES               
 -----------------------------------------*/
 .front-product {
   background: var(--section-bg-color);
